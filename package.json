@@ -1,0 +1,23 @@
+{
+  "name": "se-sgc",
+  "version": "1.0.0",
+  "description": "Software Engineering - Style Guides Collection",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorphineForOdin/se-sgc.git"
+  },
+  "keywords": [],
+  "author": "Sviatoslav Malinovskyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MorphineForOdin/se-sgc/issues"
+  },
+  "homepage": "https://github.com/MorphineForOdin/se-sgc#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
