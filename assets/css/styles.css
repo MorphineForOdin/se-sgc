@@ -1,4 +1,33 @@
+/* Styles reset. */
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Helvetica, Arial, sans-serif;
     color: #151515;
+    font-size: 14px;
+    line-height: 1;
+    background-color: lavender;
+    padding: 25px;
+}
+
+/* Common utility styles. */
+.mb-2 {
+    margin-bottom: 10px;
+}
+.p-2 {
+    padding: 10px;
+}
+
+/* Component BEM based styles. */
+.card {
+    border: 1px solid black;
+    padding: 10px;
+}
+.card--info {
+    color: cornflowerblue;
+}
+.card--desc {
+    font-family: 'Courier New', Courier, monospace;
 }
