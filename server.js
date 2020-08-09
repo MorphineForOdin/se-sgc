@@ -1,8 +1,9 @@
 const express = require('express');
-const app = express();
 const articleRouter = require('./routes/articles');
+const app = express();
 
 app.set('view engine', 'ejs');
+app.use('/assets', express.static('assets'));
 app.use('/articles', articleRouter);
 
 function getRecentArticles(take) {
