@@ -13,18 +13,20 @@
     <link rel="stylesheet" href="/assets/css/styles.css" type="text/css" />
 </head>
 <body>
-    <header>
-        header...
-        <a href="/">Recent Articles</a>
-        <a href="/articles">All Articles</a>
+    <header class="container">
+        <span class="mr-2">Header...</span>
+        <a href="/" class="mr-2">Recent Articles</a>
+        <a href="/articles" class="mr-2">All Articles</a>
         <a href="/articles/new">New Article</a>
     </header>
 
-    <main>
+    <main class="container">
         <%- body %>
     </main>
 
-    <footer>footer...</footer>
+    <footer class="container">
+        <span>Footer...</span>
+    </footer>
 
     <script src="/assets/js/scripts.js"></script>
 </body>

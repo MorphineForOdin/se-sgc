@@ -13,11 +13,14 @@ body {
 }
 
 /* Common utility styles. */
+.container {
+    padding: 10px;
+}
+.mr-2 {
+    margin-right: 10px;
+}
 .mb-2 {
     margin-bottom: 10px;
-}
-.p-2 {
-    padding: 10px;
 }
 
 /* Component BEM based styles. */

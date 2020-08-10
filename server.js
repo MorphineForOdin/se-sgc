@@ -27,8 +27,9 @@ db.once('open', () => console.info('[INFO] Connected to DB succesfully...'));
 db.on('error', error => console.error(error));
 
 // * Setup routing:
+app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/articles', articleRouter);
 
 // * Start server:
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT);
