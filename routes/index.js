@@ -1,19 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const Article = require('./../models/article');
 
-// TODO: Get data from DB.
-function getRecentArticles(take) {
-    let articles = [];
-    while (take > 0)
-        articles.push({
-            title: `Title ${--take}`,
-            createdDate: new Date(),
-            description: `Description ${take}`
-        });
-    return articles;
-}
-router.get('/', (req, res) => res.render('index', {
-    articles: getRecentArticles(10)
-}));
+router.get('/', async (req, res) => {
+    const articles = await Article
+        .find()
+        .sort({ createdDate: 'desc' });
+    res.render('index', { articles: articles });
+});
 
 module.exports = router;

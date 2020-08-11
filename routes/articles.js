@@ -10,16 +10,21 @@ router.post('/', async (req, res) => {
         markdown: req.body.markdown
     });
     try {
-        let createdArticle = await article.save();
+        const createdArticle = await article.save();
         res.redirect(`/articles/${createdArticle.id}`);
     } catch (error) {
         // TODO: Hadle creation errors.
+        console.error(error);
         res.render('/articles/new', {
             article: createdArticle
         });
     }
 });
-router.get('/new', (req, res) => res.render('articles/new'));
-router.get('/:id', (req, res) => res.render('articles/blog'));
+router.get('/new', (req, res) => res.render('articles/new', { article: new Article() }));
+router.get('/:id', async (req, res) => {
+    const article = await Article.findById(req.params.id);
+    if (!article) res.redirect('/');
+    res.render('articles/blog', { article: article });
+});
 
 module.exports = router;
