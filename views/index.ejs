@@ -7,7 +7,11 @@
             <div class="card--info mb-2">
                 <%= article.createdDate.toLocaleDateString() %>
             </div>
-            <div class="card--desc"><%= article.description %></div>
+            <div class="card--desc mb-2"><%= article.description %></div>
+            <form method="POST" action="/articles/<%= article.id %>?_method=DELETE">
+                <input type="hidden" name="_method" value="DELETE" />
+                <button type="submit">Delete</button>
+            </form>
         </div>
     </a>
 <% }); %>

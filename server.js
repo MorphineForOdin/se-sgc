@@ -26,6 +26,10 @@ const db = mongoose.connection;
 db.once('open', () => console.info('[INFO] Connected to DB succesfully...'));
 db.on('error', error => console.error(error));
 
+// * Use HTTP methods overrides from HTML by special query parameter:
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
 // * Setup routing:
 const indexRouter = require('./routes/index.routes');
 const articleRouter = require('./routes/articles.routes');

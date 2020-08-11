@@ -25,5 +25,9 @@ router.get('/:slug', async (req, res) => {
     if (!article) res.redirect('/');
     res.render('articles/blog', { article: article });
 });
+router.delete('/:id', async (req, res) => {
+    await Article.findByIdAndDelete(req.params.id);
+    res.redirect('/');
+});
 
 module.exports = router;
