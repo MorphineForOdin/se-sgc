@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Article = require('./../models/article');
+const Article = require('./../models/article.model');
 
 router.get('/', (req, res) => res.render('articles/index'));
 router.post('/', async (req, res) => {
