@@ -1,7 +1,7 @@
 <h2 class="mb-2">Recent Articles</h2>
 
 <% articles.forEach(article => { %>
-    <a href="/articles/<%= article.id %>">
+    <a href="/articles/<%= article.slug %>">
         <div class="card mb-2">
             <h3 class="mb-1"><%= article.title %></h3>
             <div class="card--info mb-2">

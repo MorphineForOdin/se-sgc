@@ -19,7 +19,8 @@ app.use('/assets', express.static('assets'));
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONNECTION_STRING, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 const db = mongoose.connection;
 db.once('open', () => console.info('[INFO] Connected to DB succesfully...'));
