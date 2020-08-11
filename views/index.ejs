@@ -1,11 +1,13 @@
 <h2 class="mb-2">Recent Articles</h2>
 
 <% articles.forEach(article => { %>
-    <div class="card mb-2">
-        <h3><%= article.title %></h3>
-        <div class="card--info">
-            <%= article.createdDate.toLocaleDateString() %>
+    <a href="/articles/<%= article.id %>">
+        <div class="card mb-2">
+            <h3 class="mb-1"><%= article.title %></h3>
+            <div class="card--info mb-2">
+                <%= article.createdDate.toLocaleDateString() %>
+            </div>
+            <div class="card--desc"><%= article.description %></div>
         </div>
-        <div class="card--desc"><%= article.description %></div>
-    </div>
+    </a>
 <% }); %>
