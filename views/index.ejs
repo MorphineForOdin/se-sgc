@@ -8,8 +8,9 @@
                 <%= article.createdDate.toLocaleDateString() %>
             </div>
             <div class="card--desc mb-2"><%= article.description %></div>
+            <a href="/articles/<%= article.slug %>">Read more</a>
+            <a href="/articles/edit/<%= article.id %>">Edit</a>
             <form method="POST" action="/articles/<%= article.id %>?_method=DELETE">
-                <input type="hidden" name="_method" value="DELETE" />
                 <button type="submit">Delete</button>
             </form>
         </div>
