@@ -1,0 +1,5 @@
+<h2 class="mb-2">Edit Article</h2>
+
+<form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+    <%- include('_form-inputs') %> 
+</form>
