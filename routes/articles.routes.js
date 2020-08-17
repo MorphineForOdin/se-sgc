@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Article = require('./../models/article.model');
 
+const marked = require('marked');
+const createDomPurify = require('dompurify');
+const { JSDOM } = require('jsdom');
+const domPurify = createDomPurify(new JSDOM().window);
+
 router.get('/', (req, res) => res.render('articles/index'));
 
 router.get('/new', (req, res) => res.render('articles/new', { article: new Article() }));
@@ -13,8 +18,11 @@ router.get('/edit/:id', async (req, res) => {
 
 router.get('/:slug', async (req, res) => {
     const article = await Article.findOne({ slug: req.params.slug });
-    if (!article) res.redirect('/');
-    res.render('articles/blog', { article: article });
+    if (!article || !article.markdown) res.redirect('/');
+    res.render('articles/blog', {
+        article: article,
+        sanitizedHtml: domPurify.sanitize(marked(article.markdown))
+    });
 });
 
 router.post('/', (req, res, next) => {
