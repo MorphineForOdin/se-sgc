@@ -1,3 +1,16 @@
+/*** Root scope variables. ***/
+:root {
+    /** COLORS **/
+    --color-mine-shaft: #272727;
+    --color-emperor: #505050;
+    --color-boulder: #747474;
+    --color-mountain-meadow: #14A76C;
+    --color-turbo: #FFE400;
+    --color-outrageous-orange: #FF652F;
+    --color-aero-blue: #C8FFEB;
+    --color-perano: #A0D0F0;
+}
+
 /*** Styles reset. ***/
 * {
     box-sizing: border-box;
@@ -6,10 +19,10 @@
 }
 body {
     font-family: Helvetica, Arial, sans-serif;
-    color: #151515;
-    font-size: 14px;
-    line-height: 1;
-    background-color: #f5f5ff;
+    background-color: var(--color-emperor);
+    color: var(--color-aero-blue);
+    font-size: 16px;
+    line-height: 1.25;
 }
 a {
     text-decoration: none;
@@ -32,20 +45,10 @@ a {
 .mb-4 {
     margin-bottom: 20px;
 }
-/*** COLORS:
- * dark -   #272727 - Mine Shaft
- * grey -   #747474 - Boulder
- * green -  #14A76C - Mountain Meadow
- * yellow - #FFE400 - Turbo
- * orange - #FF652F - Outrageous Orange
- * blue 1 - #C8FFEB - Aero Blue
- * blue 2 - #A0D0F0 - Perano
- */
 
 /*** Header styles. ***/
 header {
-    background-color: #272727;
-    color: #c8ffeb;
+    background-color: var(--color-mine-shaft);
 }
 header nav {
     display: flex;
@@ -69,7 +72,7 @@ header nav .toggle-button {
 header nav .toggle-button .bar {
     height: 3px;
     width: 100%;
-    background-color: #c8ffeb;
+    background-color: var(--color-aero-blue);
     border-radius: 20%;
 }
 header nav ul {
@@ -79,7 +82,7 @@ header nav ul li {
     list-style: none;
 }
 header nav ul li:hover {
-    background-color: #747474;
+    background-color: var(--color-boulder);
 }
 header nav ul li a {
     display: inline-block;
@@ -112,9 +115,9 @@ header nav ul li a {
 
 /*** Component BEM based styles. ***/
 .card {
-    border: 1px solid black;
+    background-color:var(--color-mine-shaft);
+    border: 1px solid var(--color-perano);
     padding: 10px;
-    background-color: white;
     -webkit-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
     -moz-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
     box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
@@ -124,8 +127,11 @@ header nav ul li a {
     -moz-box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5);
     box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5);
 }
+.card-title {
+    color: var(--color-mountain-meadow);
+}
 .card--info {
-    color: cornflowerblue;
+    color: var(--color-outrageous-orange);
 }
 .card--desc {
     font-family: 'Courier New', Courier, monospace;
