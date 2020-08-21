@@ -48,32 +48,68 @@ a {
 
 /*** Header styles. ***/
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
     background-color: var(--color-mine-shaft);
 }
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 4rem;
 }
 header nav .logo {
-    font-size: large;
+    font-size: large;   
     padding: 10px;
 }
 header nav .toggle-button {
     position: absolute;
-    top: 9px;
-    right: 20px;
+    top: 0;
+    right: 0;
+    height: 4rem;
+    width: 4rem;
+    padding: 1rem;
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 21px;
-    width: 30px;
+    align-items: center;
+    justify-content: center;
 }
-header nav .toggle-button .bar {
-    height: 3px;
+header nav .toggle-button > span {
+    position: relative;
     width: 100%;
+    height: 2px;
     background-color: var(--color-aero-blue);
-    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease;
+}
+header nav .toggle-button > span::before,
+header nav .toggle-button > span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+}
+header nav .toggle-button > span::before {
+    top: -.8rem;
+}
+header nav .toggle-button > span::after {
+    top: .8rem;
+}
+header nav .toggle-button.active > span {
+    transform: rotate(135deg);
+}
+header nav .toggle-button.active > span::before,
+header nav .toggle-button.active > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+header nav .toggle-button.active:hover > span {
+    transform: rotate(225deg);
 }
 header nav ul {
     display: flex;
@@ -92,6 +128,7 @@ header nav ul li a {
     header nav {
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
     }
     header nav .toggle-button {
         display: flex;
@@ -103,6 +140,9 @@ header nav ul li a {
     }
     header nav ul.active {
         display: flex;
+        position: absolute;
+        top: 4rem;
+        background-color: var(--color-mine-shaft);
     }
     header nav ul li {
         width: 100%;
