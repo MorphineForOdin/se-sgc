@@ -38,20 +38,17 @@ a {
 /******************************/
 /*** Common utility styles. ***/
 /******************************/
-.container {
-    padding: 10px;
-}
 .mr-2 {
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 .mb-1 {
-    margin-bottom: 5px;
+    margin-bottom: .5rem;
 }
 .mb-2 {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 .mb-4 {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 
@@ -72,6 +69,9 @@ header nav {
     top: 0;
     left: 0;
     z-index: 1;
+    -webkit-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
 }
 header nav .logo {
     padding: 1rem;
@@ -174,21 +174,41 @@ header nav ul li a {
     }
 }
 
+
+/**********************/
+/*** Main styles. ***/
+/**********************/
+main {
+    padding: 1rem;
+}
+
+
+/**********************/
+/*** Footer styles. ***/
+/**********************/
+footer {
+    background-color: var(--color-mine-shaft);
+    padding: 1rem;
+    -webkit-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
+}
+
+
 /***********************************/
 /*** Component BEM based styles. ***/
 /***********************************/
 .card {
     background-color:var(--color-mine-shaft);
-    border: 1px solid var(--color-perano);
-    padding: 10px;
-    -webkit-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
-    -moz-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
-    box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
+    padding: 1rem;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 }
 .card:hover {
-    -webkit-box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5);
-    -moz-box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5);
-    box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
 }
 .card-title {
     color: var(--color-mountain-meadow);
