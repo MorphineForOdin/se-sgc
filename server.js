@@ -33,9 +33,13 @@ app.use(methodOverride('_method'));
 // * Setup routing:
 const indexRouter = require('./routes/index.routes');
 const articleRouter = require('./routes/articles.routes');
+const aboutRouter = require('./routes/about.routes');
+const contactRouter = require('./routes/contact.routes');
 app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/articles', articleRouter);
+app.use('/about', aboutRouter);
+app.use('/contact', contactRouter);
 
 // * Start server:
 app.listen(process.env.PORT);
