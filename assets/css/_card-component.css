@@ -1,0 +1,25 @@
+.card {
+    background-color:var(--color-mine-shaft);
+    padding: 1rem;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+.card:hover {
+    -webkit-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+}
+
+.card-title {
+    color: var(--color-mountain-meadow);
+}
+
+.card--info {
+    color: var(--color-outrageous-orange);
+}
+
+.card--desc {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
