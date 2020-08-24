@@ -7,7 +7,21 @@ const createDomPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
 const domPurify = createDomPurify(new JSDOM().window);
 
-router.get('/', (req, res) => res.render('articles/index'));
+router.get('/', async (req, res) => {
+    try {
+        let searchOptions = {};
+        if (req.query.title)
+            searchOptions.title = new RegExp(req.query.title, 'i');
+        const articles = await Article.find(searchOptions);
+        res.render('articles/index', {
+            articles: articles,
+            searchQueryTitle: req.query.title
+        });
+    } catch (error) {
+        console.error(error);
+        res.render('/', { searchQueryTitle: req.query.title });
+    }
+});
 
 router.get('/new', (req, res) => res.render('articles/new', { article: new Article() }));
 
@@ -17,6 +31,7 @@ router.get('/edit/:id', async (req, res) => {
         if (!article) res.redirect('/');
         res.render('articles/edit', { article: article });   
     } catch (error) {
+        console.error(error);
         res.redirect('/');
     }
 });
@@ -30,6 +45,7 @@ router.get('/:slug', async (req, res) => {
             sanitizedHtml: domPurify.sanitize(marked(article.markdown))
         });
     } catch (error) {
+        console.error(error);
         res.redirect('/');
     }
 });
@@ -43,6 +59,7 @@ router.put('/:id', async (req, res, next) => {
     try {
         req.article = await Article.findById(req.params.id);   
     } catch (error) {
+        console.error(error);
         req.article = new Article();
     }
     next();
@@ -53,6 +70,7 @@ router.delete('/:id', async (req, res) => {
         await Article.findByIdAndDelete(req.params.id);
         res.redirect('/');
     } catch (error) {
+        console.error(error);
         res.redirect('/');   
     }
 });

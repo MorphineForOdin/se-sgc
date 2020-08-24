@@ -1,1 +1,20 @@
-<h2>Collection of all articles...</h2>
+<h2 class="mb-2">
+    <%= searchQueryTitle ? `Search result for: ${searchQueryTitle}` : 'All articles' %>
+</h2>
+
+<% articles.forEach(article => { %>
+    <a href="/articles/<%= article.slug %>">
+        <div class="card mb-2">
+            <h3 class="card-title mb-1"><%= article.title %></h3>
+            <div class="card--info mb-2">
+                <%= article.createdDate.toLocaleDateString() %>
+            </div>
+            <div class="card--desc mb-2"><%= article.description %></div>
+            <a href="/articles/<%= article.slug %>">Read more</a>
+            <a href="/articles/edit/<%= article.id %>">Edit</a>
+            <form method="POST" action="/articles/<%= article.id %>?_method=DELETE">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    </a>
+<% }); %>

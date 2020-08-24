@@ -8,9 +8,10 @@ router.get('/', async (req, res) => {
             .find()
             .sort({ createdDate: 'desc' })
             .limit(10);
-        res.render('index', { articles: articles });
+        res.render('index', { articles: articles, searchQueryTitle: null });
     } catch (error) {
-        res.render('index', { articles: [] });
+        console.error(error);
+        res.render('index', { articles: [], searchQueryTitle: null });
     }
 });
 
