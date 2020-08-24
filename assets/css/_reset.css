@@ -1,15 +1,17 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
     background-color: var(--color-emperor);
     color: var(--color-aero-blue);
-    font-size: 16px;
-    line-height: 1.25;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    line-height: var(--font-height);
 }
 
 a {
@@ -23,5 +25,5 @@ h3,
 h4,
 h5,
 h6 {
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.75);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, .75);
 }

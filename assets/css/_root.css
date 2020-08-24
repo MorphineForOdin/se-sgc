@@ -1,5 +1,5 @@
 :root {
-    /** COLORS **/
+    /* COLORS: */
     --color-mine-shaft: #272727;
     --color-emperor: #505050;
     --color-boulder: #747474;
@@ -8,4 +8,14 @@
     --color-outrageous-orange: #FF652F;
     --color-aero-blue: #C8FFEB;
     --color-perano: #A0D0F0;
+
+    /* FONTS: */
+    --font-family: Helvetica, Arial, sans-serif;
+    --font-size: 16px;
+    --font-height: 1.25;
+
+    /* BREAK-POINTS: */
+    --screen-mobile: 670px;
+    --screen-tablet: 992px;
+    --screen-laptop: 1200px;
 }

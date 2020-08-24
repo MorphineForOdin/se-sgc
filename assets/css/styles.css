@@ -10,7 +10,9 @@ header {
 
 main {
     min-height: calc(100vh - 8rem);
-    padding: 1rem;
+    max-width: var(--screen-laptop);
+    padding: 2rem 1rem;
+    margin: auto;
 }
 
 footer {
