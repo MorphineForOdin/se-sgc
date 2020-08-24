@@ -12,17 +12,26 @@ router.get('/', (req, res) => res.render('articles/index'));
 router.get('/new', (req, res) => res.render('articles/new', { article: new Article() }));
 
 router.get('/edit/:id', async (req, res) => {
-    const article = await Article.findById(req.params.id);
-    res.render('articles/edit', { article: article });
+    try {
+        const article = await Article.findById(req.params.id);
+        if (!article) res.redirect('/');
+        res.render('articles/edit', { article: article });   
+    } catch (error) {
+        res.redirect('/');
+    }
 });
 
 router.get('/:slug', async (req, res) => {
-    const article = await Article.findOne({ slug: req.params.slug });
-    if (!article || !article.markdown) res.redirect('/');
-    res.render('articles/blog', {
-        article: article,
-        sanitizedHtml: domPurify.sanitize(marked(article.markdown))
-    });
+    try {
+        const article = await Article.findOne({ slug: req.params.slug });
+        if (!article || !article.markdown) res.redirect('/');
+        res.render('articles/blog', {
+            article: article,
+            sanitizedHtml: domPurify.sanitize(marked(article.markdown))
+        });
+    } catch (error) {
+        res.redirect('/');
+    }
 });
 
 router.post('/', (req, res, next) => {
@@ -31,13 +40,21 @@ router.post('/', (req, res, next) => {
 }, saveArticleAndRedirectTo('new'));
 
 router.put('/:id', async (req, res, next) => {
-    req.article = await Article.findById(req.params.id);
+    try {
+        req.article = await Article.findById(req.params.id);   
+    } catch (error) {
+        req.article = new Article();
+    }
     next();
 }, saveArticleAndRedirectTo('edit'));
 
 router.delete('/:id', async (req, res) => {
-    await Article.findByIdAndDelete(req.params.id);
-    res.redirect('/');
+    try {
+        await Article.findByIdAndDelete(req.params.id);
+        res.redirect('/');
+    } catch (error) {
+        res.redirect('/');   
+    }
 });
 
 function saveArticleAndRedirectTo(path) {
