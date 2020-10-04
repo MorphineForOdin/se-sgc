@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Article = require('./../models/article.model');
 
+// * LANDING PAGE:
 router.get('/', async (req, res) => {
     try {
         const articles = await Article
@@ -13,18 +14,6 @@ router.get('/', async (req, res) => {
         console.error(error);
         res.render('index', { articles: [], searchQueryTitle: null });
     }
-});
-
-router.get('/login', (req, res) => res.render('login'));
-
-router.post('/login', (req, res) => {
-    console.log(req);
-});
-
-router.get('/register', (req, res) => res.render('register'));
-
-router.post('/register', (req, res) => {
-    console.log(req);
 });
 
 module.exports = router;
