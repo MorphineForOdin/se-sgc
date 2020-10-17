@@ -23,23 +23,27 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, {
     useCreateIndex: true
 });
 const db = mongoose.connection;
-db.once('open', () => console.info('[INFO] Connected to DB succesfully...'));
-db.on('error', error => console.error(error));
+db.once('open', () => console.info('[INFO]: Connected to DB succesfully...'));
+db.on('error', error => console.error(`[ERROR]: ${error}`));
 
 // * Use HTTP methods overrides from HTML by special query parameter:
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 // * Setup routing:
-const indexRouter = require('./routes/index.routes');
-const articleRouter = require('./routes/articles.routes');
-const aboutRouter = require('./routes/about.routes');
-const contactRouter = require('./routes/contact.routes');
 app.use(express.urlencoded({ extended: false }));
+const indexRouter = require('./routes/index.routes');
 app.use('/', indexRouter);
+const guidesRouter = require('./routes/guides.routes');
+app.use('/guides', guidesRouter);
+const basesRouter = require('./routes/bases.routes');
+app.use('/bases', basesRouter);
+const articleRouter = require('./routes/articles.routes');
 app.use('/articles', articleRouter);
+const productsRouter = require('./routes/products.routes');
+app.use('/products', productsRouter);
+const aboutRouter = require('./routes/about.routes');
 app.use('/about', aboutRouter);
-app.use('/contact', contactRouter);
 
 // * Start server:
 app.listen(process.env.PORT);

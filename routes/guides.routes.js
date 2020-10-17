@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => res.render('contact/index'));
+router.get('/', async (req, res) => res.render('guides/index'));
 
 module.exports = router;

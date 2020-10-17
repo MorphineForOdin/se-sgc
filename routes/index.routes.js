@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         const articles = await Article
             .find()
             .sort({ createdDate: 'desc' })
-            .limit(10);
+            .limit(5);
         res.render('index', { articles: articles, searchQueryTitle: null });
     } catch (error) {
         console.error(error);
