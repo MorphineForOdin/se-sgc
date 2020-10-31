@@ -46,7 +46,7 @@ footer {
     margin: 25px;
     opacity: .85;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
-    transition: opacity .3s ease-in-out, box-shadow .3s ease-in-out;
+    transition: opacity .2s ease-in-out, box-shadow .2s ease-in-out;
 }
 .theme > .main > div:hover {
     opacity: 1;
