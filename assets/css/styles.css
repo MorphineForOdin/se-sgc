@@ -23,3 +23,57 @@ footer {
     -moz-box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 0px -3px 5px 0px rgba(0,0,0,0.75);
 }
+
+/* TEMP. */
+.theme {
+    height: 100%;
+    width: 100%;
+    margin: 80px 0;
+    padding: 25px;
+}
+.theme > .main {
+    background-color: var(--color-background-main);
+    margin-bottom: 20px;
+}
+.theme > .component {
+    background-color: var(--color-background-component);
+}
+.theme > .main > div,
+.theme > .component > div {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    margin: 25px;
+    opacity: .85;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+    transition: opacity .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.theme > .main > div:hover {
+    opacity: 1;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+}
+.theme > .component > div:hover {
+    opacity: 1;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+}
+.accent-1 {
+    background-color: var(--color-accent-red);
+}
+.accent-2 {
+    background-color: var(--color-accent-orange);
+}
+.accent-3 {
+    background-color: var(--color-accent-yellow);
+}
+.accent-4 {
+    background-color: var(--color-accent-green);
+}
+.accent-5 {
+    background-color: var(--color-accent-blue);
+}
+.accent-6 {
+    background-color: var(--color-accent-indigo);
+}
+.accent-7 {
+    background-color: var(--color-accent-violet);
+}

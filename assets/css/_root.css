@@ -1,14 +1,43 @@
 :root {
-    /* COLORS: */
+    /* *********** *
+     * COLOR THEME *
+     * *********** */
+
+    /* Background: */
     --color-mine-shaft: #272727;
     --color-emperor: #505050;
     --color-boulder: #747474;
-    --color-mountain-meadow: #14A76C;
-    --color-turbo: #FFE400;
-    --color-outrageous-orange: #FF652F;
+    /* Text: */
     --color-aero-blue: #C8FFEB;
+    /* Accents: */
+    --color-sea-pink: #EFA9AE;
+    --color-outrageous-orange: #FF652F;
+    --color-turbo: #FFE400;
+    --color-mountain-meadow: #14A76C;
     --color-perano: #A0D0F0;
+    --color-malibu: #65AFFF;
+    --color-cornflower-blue: #7480EC;
 
+
+    /* *********** *
+     * * VARIABLES *
+     * *********** */
+
+    /* COLORS: */
+    --color-background-main: var(--color-emperor);
+    --color-background-component: var(--color-mine-shaft);
+    --color-background-hover: var(--color-boulder);
+
+    --colot-text: var(--color-aero-blue);
+
+    --color-accent-red: var(--color-sea-pink);
+    --color-accent-orange: var(--color-outrageous-orange);
+    --color-accent-yellow: var(--color-turbo);
+    --color-accent-green: var(--color-mountain-meadow);
+    --color-accent-blue: var(--color-perano);
+    --color-accent-indigo: var(--color-malibu);
+    --color-accent-violet: var(--color-cornflower-blue);
+    
     /* FONTS: */
     --font-family: Helvetica, Arial, sans-serif;
     --font-size: 16px;
