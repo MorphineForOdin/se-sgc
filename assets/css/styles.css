@@ -2,6 +2,7 @@
 @import './_reset.css';
 @import './_shared.css';
 @import './_header.css';
+@import './_buttons.css';
 @import './_card-component.css';
 
 header {
